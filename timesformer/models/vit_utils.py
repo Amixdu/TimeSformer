@@ -1,3 +1,4 @@
+%%writefile vit_utils.py
 # Copyright 2020 Ross Wightman
 # Various utility functions
 
@@ -11,7 +12,13 @@ import torch.nn.functional as F
 from timesformer.models.helpers import load_pretrained
 from .build import MODEL_REGISTRY
 from itertools import repeat
-from collections import abc as container_abcs
+TORCH_MAJOR = int(torch.__version__.split('.')[0])
+TORCH_MINOR = int(torch.__version__.split('.')[1])
+if TORCH_MAJOR == 1 and TORCH_MINOR < 8:
+    from torch._six import container_abcs,int_classes
+else:
+    import collections.abc as container_abcs
+    int_classes = int
 
 DEFAULT_CROP_PCT = 0.875
 IMAGENET_DEFAULT_MEAN = (0.485, 0.456, 0.406)
