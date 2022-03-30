@@ -1,7 +1,3 @@
-%%writefile vit_utils.py
-# Copyright 2020 Ross Wightman
-# Various utility functions
-
 import torch
 import torch.nn as nn
 from functools import partial
