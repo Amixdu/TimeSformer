@@ -102,7 +102,7 @@ _C.TEST.NUM_SPATIAL_CROPS = 3
 # Checkpoint types include `caffe2` or `pytorch`.
 _C.TEST.CHECKPOINT_TYPE = "pytorch"
 # Path to saving prediction results file.
-_C.TEST.SAVE_RESULTS_PATH = ""
+_C.TEST.SAVE_RESULTS_PATH = "results.txt"
 # -----------------------------------------------------------------------------
 # ResNet options
 # -----------------------------------------------------------------------------
